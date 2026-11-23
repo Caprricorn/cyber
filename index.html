@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER PULSE — Киберклуб и онлайн-бронирование</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-dot"></span>
+        CYBER<span>PULSE</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#zones">Зоны и железо</a>
+        <a href="#booking">Бронирование</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-glow hero-glow--purple" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--cyan" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-badge">OPEN 24/7 // ONLINE BOOKING</div>
+        <h1 class="hero-title">
+          Твоё пространство для<br>
+          <span>чистого FPS и побед</span>
+        </h1>
+        <p class="hero-subtitle">
+          Топовое железо, стабильный пинг и комфортная атмосфера без лишнего шума. Выбирай место на карте зала и бронируй в пару кликов.
+        </p>
+
+        <ul class="hero-specs">
+          <li><strong>RTX 4080</strong><span>Видеокарты</span></li>
+          <li><strong>240–360 Hz</strong><span>Мониторы</span></li>
+          <li><strong>1 Гбит/с</strong><span>Оптоволокно</span></li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-primary">Забронировать место</a>
+          <a href="#zones" class="btn btn-ghost">Смотреть тарифы</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zones -->
+    <section class="section" id="zones">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">// 01. HARDWARE</span>
+          <h2>Зоны и железо</h2>
+        </div>
+
+        <div class="zones-grid">
+          <article class="zone-card">
+            <div class="zone-card-top">
+              <span class="zone-label">Standard</span>
+              <span class="zone-price">150 ₽<small>/ч</small></span>
+            </div>
+            <p class="zone-desc">Основной зал для комфортной игры в любые тайтлы с высоким FPS.</p>
+            <ul class="zone-specs">
+              <li><span>GPU</span><strong>RTX 4060 8 GB</strong></li>
+              <li><span>Монитор</span><strong>24" FullHD 165 Hz</strong></li>
+              <li><span>CPU / RAM</span><strong>i5-13400F / 32 GB</strong></li>
+              <li><span>Периферия</span><strong>Logitech G Pro</strong></li>
+            </ul>
+            <button type="button" class="btn btn-outline zone-select-btn" data-select-zone="standard">
+              Выбрать Standard
+            </button>
+          </article>
+
+          <article class="zone-card zone-card--featured">
+            <div class="zone-badge">ПОПУЛЯРНОЕ</div>
+            <div class="zone-card-top">
+              <span class="zone-label">VIP</span>
+              <span class="zone-price">250 ₽<small>/ч</small></span>
+            </div>
+            <p class="zone-desc">Увеличенное пространство, топовые девайсы и мониторы 240 Hz для рейтинга.</p>
+            <ul class="zone-specs">
+              <li><span>GPU</span><strong>RTX 4080 16 GB</strong></li>
+              <li><span>Монитор</span><strong>27" 2K 240 Hz</strong></li>
+              <li><span>CPU / RAM</span><strong>i7-14700K / 32 GB</strong></li>
+              <li><span>Периферия</span><strong>HyperX / Superlight</strong></li>
+            </ul>
+            <button type="button" class="btn btn-primary zone-select-btn" data-select-zone="vip">
+              Выбрать VIP
+            </button>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-top">
+              <span class="zone-label">Bootcamp</span>
+              <span class="zone-price">1100 ₽<small>/ч</small></span>
+            </div>
+            <p class="zone-desc">Изолированная комната на 5 ПК для стака, праков и локальных турниров.</p>
+            <ul class="zone-specs">
+              <li><span>Состав</span><strong>5 ПК (вся комната)</strong></li>
+              <li><span>GPU</span><strong>RTX 4080 16 GB</strong></li>
+              <li><span>Монитор</span><strong>24.5" 360 Hz</strong></li>
+              <li><span>Оснащение</span><strong>Шумоизоляция + TV</strong></li>
+            </ul>
+            <button type="button" class="btn btn-outline zone-select-btn" data-select-zone="bootcamp">
+              Выбрать Bootcamp
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Widget -->
+    <section class="section" id="booking">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">// 02. ONLINE BOOKING</span>
+          <h2>Онлайн-бронирование</h2>
+        </div>
+
+        <div class="booking-layout">
+          <!-- Left: Steps 1-3 -->
+          <div class="booking-steps">
+            <!-- Step 1 -->
+            <div class="booking-panel">
+              <div class="step-header">
+                <span class="step-num">01</span>
+                <h3>Зона и пакет времени</h3>
+              </div>
+
+              <div class="control-block">
+                <span class="control-label">Выберите зону</span>
+                <div class="option-grid option-grid--3" id="zone-options">
+                  <button type="button" class="option-btn active" data-zone="standard">
+                    <strong>Standard</strong>
+                    <span>150 ₽/ч</span>
+                  </button>
+                  <button type="button" class="option-btn" data-zone="vip">
+                    <strong>VIP</strong>
+                    <span>250 ₽/ч</span>
+                  </button>
+                  <button type="button" class="option-btn" data-zone="bootcamp">
+                    <strong>Bootcamp</strong>
+                    <span>1100 ₽/ч</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="control-block">
+                <span class="control-label">Пакет времени</span>
+                <div class="option-grid option-grid--4" id="pack-options">
+                  <button type="button" class="option-btn active" data-pack="1">
+                    <strong>1 час</strong>
+                    <span>Стандарт</span>
+                  </button>
+                  <button type="button" class="option-btn" data-pack="3">
+                    <strong>3 часа</strong>
+                    <span>Выгода 10%</span>
+                  </button>
+                  <button type="button" class="option-btn" data-pack="5">
+                    <strong>5 часов</strong>
+                    <span>Выгода 15%</span>
+                  </button>
+                  <button type="button" class="option-btn" data-pack="night">
+                    <strong>Ночной</strong>
+                    <span>22:00–08:00</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="booking-panel">
+              <div class="step-header step-header--between">
+                <div class="step-header-left">
+                  <span class="step-num">02</span>
+                  <h3>Карта зала — выберите место</h3>
+                </div>
+                <div class="seat-legend">
+                  <span><i class="dot dot--free"></i>Свободно</span>
+                  <span><i class="dot dot--selected"></i>Выбрано</span>
+                  <span><i class="dot dot--occupied"></i>Занято</span>
+                </div>
+              </div>
+
+              <div class="hall-screen">ЭКРАН / ЗОНА АДМИНИСТРАТОРА</div>
+              <div class="seat-grid" id="seat-grid" role="group" aria-label="Карта мест"></div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="booking-panel">
+              <div class="step-header">
+                <span class="step-num">03</span>
+                <h3>Дата и время начала</h3>
+              </div>
+
+              <div class="date-row">
+                <div class="quick-dates">
+                  <button type="button" class="quick-date-btn active" data-day-offset="0">Сегодня</button>
+                  <button type="button" class="quick-date-btn" data-day-offset="1">Завтра</button>
+                </div>
+                <input type="date" id="booking-date" class="input-field date-input" aria-label="Выберите дату">
+              </div>
+
+              <div class="control-block">
+                <span class="control-label">Слот времени</span>
+                <div class="time-grid" id="time-slots">
+                  <button type="button" class="time-btn" data-time="12:00">12:00</button>
+                  <button type="button" class="time-btn" data-time="14:00">14:00</button>
+                  <button type="button" class="time-btn" data-time="16:00">16:00</button>
+                  <button type="button" class="time-btn active" data-time="18:00">18:00</button>
+                  <button type="button" class="time-btn" data-time="20:00">20:00</button>
+                  <button type="button" class="time-btn" data-time="22:00">22:00</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Step 4 Summary & Checkout -->
+          <aside class="booking-summary">
+            <div class="step-header">
+              <span class="step-num">04</span>
+              <h3>Итого</h3>
+            </div>
+
+            <dl class="summary-list">
+              <div>
+                <dt>Зона</dt>
+                <dd id="sum-zone">Standard</dd>
+              </div>
+              <div>
+                <dt>Пакет</dt>
+                <dd id="sum-pack">1 час</dd>
+              </div>
+              <div>
+                <dt>Место</dt>
+                <dd id="sum-seat" class="is-empty">Не выбрано</dd>
+              </div>
+              <div>
+                <dt>Дата и время</dt>
+                <dd id="sum-datetime">—</dd>
+              </div>
+            </dl>
+
+            <div class="summary-total">
+              <span>К оплате</span>
+              <strong id="sum-price">150 ₽</strong>
+            </div>
+
+            <form id="booking-form" class="checkout-form" novalidate>
+              <div class="field">
+                <label for="client-name">Никнейм / Имя</label>
+                <input type="text" id="client-name" class="input-field" placeholder="Например, Rin" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="client-phone">Телефон</label>
+                <input type="tel" id="client-phone" class="input-field" placeholder="+7 (999) 123-45-67" autocomplete="tel" required>
+              </div>
+
+              <p class="form-error" id="form-error" role="alert" hidden></p>
+
+              <button type="submit" class="btn btn-primary btn-full">Подтвердить бронь</button>
+              <p class="form-note">Оплата на месте перед началом сессии. Бронь держится 15 минут.</p>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="section" id="contacts">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">// 03. LOCATION</span>
+          <h2>Контакты</h2>
+        </div>
+
+        <div class="contacts-grid">
+          <div class="contact-card">
+            <span class="contact-label">Адрес</span>
+            <strong>ул. Киберспортивная, 42</strong>
+            <p>Вход со стороны проспекта, цокольный этаж</p>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">Режим работы</span>
+            <strong>Круглосуточно 24/7</strong>
+            <p>Без выходных и технических перерывов</p>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">Связь</span>
+            <strong>+7 (900) 555-35-35</strong>
+            <p>Telegram: @cyberpulse_club</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 CYBER PULSE. Все права защищены.</span>
+      <span class="footer-mono">DEMO // FRONTEND BOOKING ENGINE</span>
+    </div>
+  </footer>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-backdrop" id="confirm-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" id="modal-close-x" aria-label="Закрыть">&times;</button>
+      <div class="modal-icon">✓</div>
+      <span class="modal-tag">DEMO MODE // BOOKING CONFIRMED</span>
+      <h3 id="modal-title">Место забронировано!</h3>
+      <p class="modal-code">Номер брони: <strong id="modal-booking-id">CP-000000</strong></p>
+
+      <div class="modal-details" id="modal-details"></div>
+
+      <button type="button" class="btn btn-primary btn-full" id="modal-ok-btn">Отлично</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const ZONES = {
+        standard: { name: 'Standard', hourly: 150, night: 700 },
+        vip: { name: 'VIP', hourly: 250, night: 1100 },
+        bootcamp: { name: 'Bootcamp', hourly: 1100, night: 4500 }
+      };
+
+      const PACKS = {
+        '1': { label: '1 час', hours: 1, discount: 1 },
+        '3': { label: '3 часа', hours: 3, discount: 0.9 },
+        '5': { label: '5 часов', hours: 5, discount: 0.85 },
+        'night': { label: 'Ночной (22:00–08:00)', isNight: true }
+      };
+
+      // Изначально занятые места по зонам (в текущей сессии обновляются после брони)
+      const occupiedByZone = {
+        standard: new Set(['ПК-02', 'ПК-05', 'ПК-08']),
+        vip: new Set(['ПК-01', 'ПК-06']),
+        bootcamp: new Set(['ПК-04', 'ПК-09'])
+      };
+
+      const state = {
+        zone: 'standard',
+        pack: '1',
+        seat: null,
+        date: '',
+        time: '18:00'
+      };
+
+      // DOM
+      const zoneButtons = document.querySelectorAll('#zone-options .option-btn');
+      const packButtons = document.querySelectorAll('#pack-options .option-btn');
+      const quickZoneLinks = document.querySelectorAll('.zone-select-btn');
+      const seatGrid = document.getElementById('seat-grid');
+      const dateInput = document.getElementById('booking-date');
+      const quickDateBtns = document.querySelectorAll('.quick-date-btn');
+      const timeButtons = document.querySelectorAll('#time-slots .time-btn');
+
+      const sumZone = document.getElementById('sum-zone');
+      const sumPack = document.getElementById('sum-pack');
+      const sumSeat = document.getElementById('sum-seat');
+      const sumDatetime = document.getElementById('sum-datetime');
+      const sumPrice = document.getElementById('sum-price');
+
+      const form = document.getElementById('booking-form');
+      const nameInput = document.getElementById('client-name');
+      const phoneInput = document.getElementById('client-phone');
+      const formError = document.getElementById('form-error');
+
+      const modal = document.getElementById('confirm-modal');
+      const modalBookingId = document.getElementById('modal-booking-id');
+      const modalDetails = document.getElementById('modal-details');
+      const modalCloseX = document.getElementById('modal-close-x');
+      const modalOkBtn = document.getElementById('modal-ok-btn');
+
+      // Helpers
+      function toIsoDate(offsetDays = 0) {
+        const d = new Date();
+        d.setDate(d.getDate() + offsetDays);
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
+      }
+
+      function formatDisplayDate(iso) {
+        if (!iso) return '—';
+        const [y, m, d] = iso.split('-');
+        return `${d}.${m}.${y}`;
+      }
+
+      function calculatePrice() {
+        const zone = ZONES[state.zone];
+        const pack = PACKS[state.pack];
+        if (pack.isNight) return zone.night;
+        return Math.round(zone.hourly * pack.hours * pack.discount);
+      }
+
+      function showError(msg) {
+        formError.textContent = msg;
+        formError.hidden = false;
+      }
+
+      function clearError() {
+        formError.textContent = '';
+        formError.hidden = true;
+      }
+
+      function renderSeats() {
+        seatGrid.innerHTML = '';
+        const occupied = occupiedByZone[state.zone];
+
+        for (let i = 1; i <= 10; i++) {
+          const seatId = `ПК-${String(i).padStart(2, '0')}`;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'seat-btn';
+          btn.dataset.seat = seatId;
+
+          const isOccupied = occupied.has(seatId);
+          const isSelected = state.seat === seatId;
+
+          if (isOccupied) {
+            btn.classList.add('occupied');
+            btn.disabled = true;
+          } else if (isSelected) {
+            btn.classList.add('selected');
+          }
+
+          btn.innerHTML = `<span class="seat-id">${seatId}</span><span class="seat-status">${isOccupied ? 'Занято' : (isSelected ? 'Выбрано' : 'Свободно')}</span>`;
+
+          if (!isOccupied) {
+            btn.addEventListener('click', () => {
+              state.seat = state.seat === seatId ? null : seatId;
+              clearError();
+              renderSeats();
+              updateSummary();
+            });
+          }
+
+          seatGrid.appendChild(btn);
+        }
+      }
+
+      function updateSummary() {
+        sumZone.textContent = ZONES[state.zone].name;
+        sumPack.textContent = PACKS[state.pack].label;
+
+        if (state.seat) {
+          sumSeat.textContent = state.seat;
+          sumSeat.classList.remove('is-empty');
+        } else {
+          sumSeat.textContent = 'Не выбрано';
+          sumSeat.classList.add('is-empty');
+        }
+
+        const timeText = state.pack === 'night' ? '22:00' : (state.time || '—');
+        sumDatetime.textContent = `${formatDisplayDate(state.date)}, ${timeText}`;
+        sumPrice.textContent = `${calculatePrice().toLocaleString('ru-RU')} ₽`;
+      }
+
+      function selectZone(zoneKey) {
+        state.zone = zoneKey;
+        state.seat = null;
+        zoneButtons.forEach((b) => b.classList.toggle('active', b.dataset.zone === zoneKey));
+        clearError();
+        renderSeats();
+        updateSummary();
+      }
+
+      function formatRuPhone(value) {
+        let digits = value.replace(/\D/g, '');
+        if (!digits) return '';
+        if (digits[0] === '8') digits = '7' + digits.slice(1);
+        if (digits[0] === '9') digits = '7' + digits;
+        digits = digits.slice(0, 11);
+
+        let res = '+' + digits[0];
+        if (digits.length > 1) res += ' (' + digits.slice(1, 4);
+        if (digits.length >= 5) res += ') ' + digits.slice(4, 7);
+        if (digits.length >= 8) res += '-' + digits.slice(7, 9);
+        if (digits.length >= 10) res += '-' + digits.slice(9, 11);
+        return res;
+      }
+
+      function isValidRuPhone(value) {
+        const digits = value.replace(/\D/g, '');
+        // Ровно 11 цифр, начинается с 79 или 89 (мобильные РФ)
+        if (!/^[78]9\d{9}$/.test(digits)) return false;
+        // Защита от фейков вроде +7 (999) 999-99-99
+        if (/^(\d)\1{9}$/.test(digits.slice(1))) return false;
+        return true;
+      }
+
+      phoneInput.addEventListener('input', (e) => {
+        e.target.value = formatRuPhone(e.target.value);
+        clearError();
+      });
+
+      // Init Date
+      const todayIso = toIsoDate(0);
+      dateInput.min = todayIso;
+      dateInput.value = todayIso;
+      state.date = todayIso;
+
+      // Listeners: Zones
+      zoneButtons.forEach((btn) => {
+        btn.addEventListener('click', () => selectZone(btn.dataset.zone));
+      });
+
+      quickZoneLinks.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          selectZone(btn.dataset.selectZone);
+          document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // Listeners: Packs
+      packButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.pack = btn.dataset.pack;
+          packButtons.forEach((b) => b.classList.toggle('active', b === btn));
+
+          // Для ночного пакета автоматически подсвечиваем 22:00
+          if (state.pack === 'night') {
+            state.time = '22:00';
+            timeButtons.forEach((tb) => tb.classList.toggle('active', tb.dataset.time === '22:00'));
+          }
+          updateSummary();
+        });
+      });
+
+      // Listeners: Dates
+      quickDateBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const offset = Number(btn.dataset.dayOffset);
+          const iso = toIsoDate(offset);
+          state.date = iso;
+          dateInput.value = iso;
+          quickDateBtns.forEach((b) => b.classList.toggle('active', b === btn));
+          updateSummary();
+        });
+      });
+
+      dateInput.addEventListener('change', (e) => {
+        state.date = e.target.value || todayIso;
+        quickDateBtns.forEach((b) => {
+          const offset = Number(b.dataset.dayOffset);
+          b.classList.toggle('active', toIsoDate(offset) === state.date);
+        });
+        updateSummary();
+      });
+
+      // Listeners: Time
+      timeButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.time = btn.dataset.time;
+          timeButtons.forEach((b) => b.classList.toggle('active', b === btn));
+          updateSummary();
+        });
+      });
+
+      // Modal controls
+      function openModal(bookingId, detailsHtml) {
+        modalBookingId.textContent = bookingId;
+        modalDetails.innerHTML = detailsHtml;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      modalCloseX.addEventListener('click', closeModal);
+      modalOkBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+
+      // Form submit
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        clearError();
+
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+
+        if (!state.seat) {
+          showError('Выберите свободное место на карте зала (Шаг 02).');
+          return;
+        }
+        if (!state.date || !state.time) {
+          showError('Укажите дату и слот времени (Шаг 03).');
+          return;
+        }
+        if (name.length < 2) {
+          showError('Введите никнейм или имя.');
+          nameInput.focus();
+          return;
+        }
+        if (!isValidRuPhone(phone)) {
+          showError('Введите российский мобильный номер в формате +7 (9XX) XXX-XX-XX.');
+          phoneInput.focus();
+          return;
+        }
+
+        const bookingId = 'CP-' + Math.floor(100000 + Math.random() * 900000);
+        const price = calculatePrice().toLocaleString('ru-RU');
+        const bookedSeat = state.seat;
+        const zoneName = ZONES[state.zone].name;
+        const packLabel = PACKS[state.pack].label;
+        const dateFormatted = formatDisplayDate(state.date);
+        const timeText = state.pack === 'night' ? '22:00' : state.time;
+
+        // Переводим место в статус "Занято" в текущей сессии
+        occupiedByZone[state.zone].add(bookedSeat);
+        state.seat = null;
+        form.reset();
+        renderSeats();
+        updateSummary();
+
+        openModal(
+          bookingId,
+          `
+            <p><span>Игрок</span><strong>${name.replace(/[<>]/g, '')}</strong></p>
+            <p><span>Зона и место</span><strong>${zoneName} / ${bookedSeat}</strong></p>
+            <p><span>Пакет</span><strong>${packLabel}</strong></p>
+            <p><span>Дата и время</span><strong>${dateFormatted}, ${timeText}</strong></p>
+            <p><span>Сумма</span><strong>${price} ₽</strong></p>
+          `
+        );
+      });
+
+      // Initial render
+      renderSeats();
+      updateSummary();
+    })();
+  </script>
+</body>
+</html>
