@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYBER PULSE — Киберклуб и онлайн-бронирование</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -265,6 +262,21 @@
                 <input type="tel" id="client-phone" class="input-field" placeholder="+7 (999) 123-45-67" autocomplete="tel" required>
               </div>
 
+              <div class="form-checkboxes">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="consent-pd" name="consentPd" required>
+                  <span>
+                    Я даю согласие на обработку персональных данных в соответствии с
+                    <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой конфиденциальности</a>
+                  </span>
+                </label>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" id="consent-news" name="consentNews">
+                  <span>Согласен получать уведомления об акциях и турнирах клуба</span>
+                </label>
+              </div>
+
               <p class="form-error" id="form-error" role="alert" hidden></p>
 
               <button type="submit" class="btn btn-primary btn-full">Подтвердить бронь</button>
@@ -307,6 +319,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© 2026 CYBER PULSE. Все права защищены.</span>
+      <a href="privacy.html" class="footer-legal">Политика обработки персональных данных</a>
       <span class="footer-mono">DEMO // FRONTEND BOOKING ENGINE</span>
     </div>
   </footer>
@@ -324,6 +337,15 @@
 
       <button type="button" class="btn btn-primary btn-full" id="modal-ok-btn">Отлично</button>
     </div>
+  </div>
+
+  <!-- Cookie-баннер -->
+  <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Уведомление о cookie" hidden>
+    <p class="cookie-banner__text">
+      Мы используем файлы cookie для корректной работы сайта. Продолжая пользоваться сайтом, вы соглашаетесь с
+      <a href="privacy.html">Политикой конфиденциальности</a>.
+    </p>
+    <button type="button" class="btn btn-primary btn-sm cookie-banner__btn" id="cookie-accept">Понятно</button>
   </div>
 
   <script>
@@ -375,6 +397,7 @@
       const nameInput = document.getElementById('client-name');
       const phoneInput = document.getElementById('client-phone');
       const formError = document.getElementById('form-error');
+      const consentPd = document.getElementById('consent-pd');
 
       const modal = document.getElementById('confirm-modal');
       const modalBookingId = document.getElementById('modal-booking-id');
@@ -501,6 +524,7 @@
         return true;
       }
 
+      consentPd.addEventListener('change', clearError);
       phoneInput.addEventListener('input', (e) => {
         e.target.value = formatRuPhone(e.target.value);
         clearError();
@@ -619,6 +643,10 @@
           phoneInput.focus();
           return;
         }
+        if (!consentPd.checked) {
+          showError('Необходимо согласие на обработку персональных данных.');
+          return;
+        }
 
         const bookingId = 'CP-' + Math.floor(100000 + Math.random() * 900000);
         const price = calculatePrice().toLocaleString('ru-RU');
@@ -650,6 +678,16 @@
       // Initial render
       renderSeats();
       updateSummary();
+      const cookieBanner = document.getElementById('cookie-banner');
+      const cookieAccept = document.getElementById('cookie-accept');
+
+      if (cookieBanner && cookieAccept && !localStorage.getItem('cyber_pulse_cookie_ok')) {
+        cookieBanner.hidden = false;
+        cookieAccept.addEventListener('click', () => {
+          localStorage.setItem('cyber_pulse_cookie_ok', '1');
+          cookieBanner.hidden = true;
+        });
+      }
     })();
   </script>
 </body>
